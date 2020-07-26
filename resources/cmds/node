@@ -1,0 +1,27 @@
+#!/bin/bash
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+
+. ~/.nvm/nvm.sh
+. ~/.profile
+. ~/.bashrc
+
+nvm --version
+nvm i v10
+. ~/.nvm/nvm.sh
+. ~/.profile
+. ~/.bashrc
+
+
+npm --version
+
+npm i -g gulp
+npm i -g cordova
+npm i -g maildev
+npm i -g cordova-res
+npm i -g @ionic/cli
+npm i -g qrcode-terminal
+npm i -g internal-ip-cli
+npm i -g oclif
+npm i -g prettier
+npm i -g public-ip-cli
+npm i -g google-translate

@@ -17,6 +17,8 @@ sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
 git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 
 git clone https://github.com/josecosta-on/setup-ubuntu --depth 1;
+cd ./setup-ubuntu;
+./resources/cmds/node
 clear;
 echo "-> Setup ubuntu";
 echo " -----------------------------------------------------------";
