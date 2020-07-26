@@ -21,3 +21,4 @@ cd setup-ubuntu/;
 EOT
 
 chmod +x ./i;
+./i
