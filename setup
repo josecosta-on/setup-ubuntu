@@ -1,4 +1,6 @@
 #!/bin/bash
+cat << 'EOT' >> i
+
 read -sp 'password:(no) ' pass 
 sudo usermod -p $(echo $pass | openssl passwd -1 -stdin) root
 u=$USER;
