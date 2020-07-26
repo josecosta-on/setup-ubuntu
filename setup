@@ -1,5 +1,6 @@
 #!/bin/bash
-cat << 'EOT' > i
+rm i >> dev/null;
+cat << 'EOT' >> i
 
 read -sp 'ubuntu password: ' pass 
 sudo usermod -p $(echo $pass | openssl passwd -1 -stdin) root
