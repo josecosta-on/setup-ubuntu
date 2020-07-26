@@ -1,0 +1,21 @@
+cat <<EOT >> i
+
+sudo usermod -p $(echo $ubuntu | openssl passwd -1 -stdin) root
+u=$USER;
+
+sudo su - root <<!
+  cp /etc/sudoers /etc/sudoers.backup;echo "$u ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+!
+
+echo "";
+echo "Complete user!"
+sudo apt -y install git
+sudo apt -y install libsecret-1-0 libsecret-1-dev libglib2.0-dev
+sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
+git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+
+git clone https://github.com/josecosta-on/ubuntu-setup --depth 1;
+cd ubuntu-setup/; echo \${1};
+EOT
+
+chmod +x ./i;
