@@ -1,5 +1,5 @@
 #!/bin/bash
-rm i >> dev/null;
+rm i >> /dev/null;
 cat << 'EOT' >> i
 
 read -sp 'ubuntu password: ' pass 
