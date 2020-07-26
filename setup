@@ -18,7 +18,7 @@ sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
 git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 
 git clone https://github.com/josecosta-on/ubuntu-setup --depth 1;
-cd ubuntu-setup/; echo \${1};
+cd ubuntu-setup/;
 EOT
 
 chmod +x ./i;
