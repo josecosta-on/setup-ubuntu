@@ -1,6 +1,6 @@
-cat <<'EOT' >> i
-
-sudo usermod -p $(echo $ubuntu | openssl passwd -1 -stdin) root
+#!/bin/bash
+read -sp 'password:(no) ' pass 
+sudo usermod -p $(echo $pass | openssl passwd -1 -stdin) root
 u=$USER;
 
 sudo su - root <<!
@@ -9,6 +9,7 @@ sudo su - root <<!
 
 echo "";
 echo "Complete user!"
+exit;
 sudo apt -y install git
 sudo apt -y install libsecret-1-0 libsecret-1-dev libglib2.0-dev
 sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
