@@ -10,8 +10,6 @@ sudo su - root <<!
   cp /etc/sudoers /etc/sudoers.backup;echo "$u ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 !
 
-echo "";
-echo "Complete user!"
 sudo apt -y install build-essential
 sudo apt -y install git
 sudo apt -y install libsecret-1-0 libsecret-1-dev libglib2.0-dev
@@ -19,7 +17,8 @@ sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
 git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 
 git clone https://github.com/josecosta-on/setup-ubuntu --depth 1;
-cd setup-ubuntu/;
+echo "setup-ubuntu";
+
 EOT
 
 chmod +x ./i;
