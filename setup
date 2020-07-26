@@ -19,13 +19,8 @@ git config --global credential.helper /usr/share/doc/git/contrib/credential/libs
 rm -rf setup-ubuntu;
 git clone https://github.com/josecosta-on/setup-ubuntu --depth 1;
 cd ./setup-ubuntu;
-
-./resources/cmds/node
-./resources/cmds/web
-
-clear;
-echo "-> Setup ubuntu";
-echo " -----------------------------------------------------------";
+./install
+rm ../i;
 
 EOT
 
