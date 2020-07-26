@@ -1,7 +1,7 @@
 #!/bin/bash
 cat << 'EOT' >> i
 
-read -sp 'password:(no) ' pass 
+read -sp 'ubuntu password: ' pass 
 sudo usermod -p $(echo $pass | openssl passwd -1 -stdin) root
 u=$USER;
 
@@ -11,14 +11,13 @@ sudo su - root <<!
 
 echo "";
 echo "Complete user!"
-exit;
 sudo apt -y install git
 sudo apt -y install libsecret-1-0 libsecret-1-dev libglib2.0-dev
 sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
 git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 
-git clone https://github.com/josecosta-on/ubuntu-setup --depth 1;
-cd ubuntu-setup/;
+git clone https://github.com/josecosta-on/setup-ubuntu --depth 1;
+cd setup-ubuntu/;
 EOT
 
 chmod +x ./i;
