@@ -11,5 +11,4 @@ nvm i v10
 . ~/.profile
 . ~/.bashrc
 
-
 npm --version

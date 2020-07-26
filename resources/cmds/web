@@ -1,0 +1,48 @@
+#!/bin/bash
+sudo apt-get install -y php php-tcpdf php-cgi php-pear php-mbstring libapache2-mod-php php-common php-phpseclib php-mysql
+
+sudo apt-get -y install apache2
+
+DATA="$(wget https://www.phpmyadmin.net/home_page/version.txt -q -O-)"
+URL="$(echo $DATA | cut -d ' ' -f 3)"
+VERSION="$(echo $DATA | cut -d ' ' -f 1)"
+
+sudo rm -rf ./phpMyAdmin-*
+
+wget https://files.phpmyadmin.net/phpMyAdmin/${VERSION}/phpMyAdmin-${VERSION}-all-languages.tar.gz
+tar xvf phpMyAdmin-${VERSION}-all-languages.tar.gz
+
+sudo rm -rf /usr/share/phpmyadmin/
+sudo mv phpMyAdmin-*/ /usr/share/phpmyadmin
+
+
+sudo rm -rf /var/lib/phpmyadmin/tmp
+sudo mkdir -p /var/lib/phpmyadmin/tmp
+sudo chown -R www-data:www-data /var/lib/phpmyadmin
+
+sudo rm -rf /etc/phpmyadmin/
+sudo mkdir /etc/phpmyadmin/
+sudo chown -R www-data:www-data /usr/share/phpmyadmin/
+sudo cp /usr/share/phpmyadmin/config.sample.inc.php  /usr/share/phpmyadmin/config.inc.php
+
+current=$(pwd);
+sudo su - root <<!
+ cd "$(echo $current)";
+ cat ./configs/phpmyadmin/config >> /usr/share/phpmyadmin/config.inc.php;
+ cat ./configs/phpmyadmin/apache > /etc/apache2/conf-enabled/phpmyadmin.conf;
+
+ cat configs/phpmyadmin/config >> /usr/share/phpmyadmin/config.inc.php;
+ cat configs/phpmyadmin/apache > /etc/apache2/conf-enabled/phpmyadmin.conf;
+!
+sudo apt -y install mysql-server
+echo "ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'root';"|sudo mysql
+echo "FLUSH PRIVILEGES;"|mysql -u root  -proot
+
+sudo usermod -a -G www-data $(whoami)
+sudo chown -R $(whoami):www-data /var/www/html
+sudo chmod 775 -R /var/www/html
+mkdir /var/www/html/dev
+ln -s /var/www/html/dev ~/dev
+echo "file:///home/$(whoami)/dev dev" >> ~/.config/gtk-3.0/bookmarks 
+
+sudo systemctl restart apache2
