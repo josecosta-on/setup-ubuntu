@@ -1,5 +1,5 @@
 #!/bin/bash
-rm i >> /dev/null;
+rm i >> /dev/null 2>&1;
 cat << 'EOT' >> i
 
 read -sp 'ubuntu password: ' pass 
@@ -19,8 +19,9 @@ git config --global credential.helper /usr/share/doc/git/contrib/credential/libs
 rm -rf setup-ubuntu;
 git clone https://github.com/josecosta-on/setup-ubuntu --depth 1;
 cd ./setup-ubuntu;
-./install
 rm ../i;
+./install;
+
 
 EOT
 
