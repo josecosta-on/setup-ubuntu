@@ -1,4 +1,10 @@
 #!/bin/bash
+FILE=~/.nvm
+if test -d "$FILE"; then
+    ./node-list;
+    exit;
+fi
+
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 . ~/.nvm/nvm.sh
@@ -13,5 +19,3 @@ nvm i v10
 
 
 npm --version
-
-npm i -g nativefier
