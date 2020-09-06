@@ -1,0 +1,17 @@
+#!/bin/bash
+FILE=~/.nvm
+if ! test -d "$FILE"; then
+    wget -qO- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+    . ~/.nvm/nvm.sh
+    . ~/.profile
+    . ~/.bashrc
+    
+    nvm --version
+    nvm i v10
+    . ~/.nvm/nvm.sh
+    . ~/.profile
+    . ~/.bashrc
+
+    npm --version
+    ./lib/reader $0 default.txt "npm i -g"
+fi

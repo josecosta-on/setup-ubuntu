@@ -1,0 +1,15 @@
+#!/bin/bash
+#gsettings list-recursively org.gnome.shell.extensions.$name
+
+name="${1}"
+echo "$name"
+
+
+input="./resources/extensions/ubuntu/$name/settings.txt"
+i=1;
+while IFS= read -r line
+do
+  i=$(($i+1))
+  gsettings set $line
+  echo $i:: gsettings set $line
+done < "$input"

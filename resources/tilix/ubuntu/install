@@ -1,0 +1,6 @@
+#!/bin/bash
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "['<Primary><Alt>y']"
+python3 ~/ubuntu-setup/lib/keyboard.py 'open tilix' 'tilix' '<Control><Alt>t'
+
+I="$INSTALLER"
+$(echo $I)

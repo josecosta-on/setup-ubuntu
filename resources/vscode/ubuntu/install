@@ -1,0 +1,6 @@
+#!/bin/bash
+
+I="$UNI_INSTALLER --classic"
+$(echo $I)
+
+./lib/reader $0 default.txt "code --install-extension"

@@ -1,0 +1,8 @@
+#!/bin/bash
+SCRIPT=`realpath $0`
+SCRIPTPATH=`dirname $SCRIPT`
+
+cd themes;git clone https://github.com/josecosta-on/arc-theme --depth 1;cd arc-theme/;./install
+
+cd $SETUPUBUNTUPATH
+

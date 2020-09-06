@@ -1,0 +1,17 @@
+vscode
+pick-colour-picker
+postman
+vlc
+rocketchat-desktop
+krita
+android-studio
+filezilla
+
+dbeaver
+opera
+virtualbox
+network-manager-openvpn
+playonlinux
+inkscape
+openjdk-14-jdk
+default-jdk

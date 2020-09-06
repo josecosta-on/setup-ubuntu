@@ -1,0 +1,32 @@
+#!/bin/bash
+DATA="$(wget https://www.phpmyadmin.net/home_page/version.txt -q -O-)"
+URL="$(echo $DATA | cut -d ' ' -f 3)"
+VERSION="$(echo $DATA | cut -d ' ' -f 1)"
+
+sudo rm -rf ./phpMyAdmin-*
+
+wget https://files.phpmyadmin.net/phpMyAdmin/${VERSION}/phpMyAdmin-${VERSION}-all-languages.tar.gz
+tar xvf phpMyAdmin-${VERSION}-all-languages.tar.gz
+
+sudo rm -rf /usr/share/phpmyadmin/
+sudo mv phpMyAdmin-*/ /usr/share/phpmyadmin
+
+
+sudo rm -rf /var/lib/phpmyadmin/tmp
+sudo mkdir -p /var/lib/phpmyadmin/tmp
+sudo chown -R www-data:www-data /var/lib/phpmyadmin
+
+sudo rm -rf /etc/phpmyadmin/
+sudo mkdir /etc/phpmyadmin/
+sudo chown -R www-data:www-data /usr/share/phpmyadmin/
+sudo cp /usr/share/phpmyadmin/config.sample.inc.php  /usr/share/phpmyadmin/config.inc.php
+
+current=$(pwd);
+sudo su - root <<!
+ cd "$(echo $current)";
+ cat ./resources/phpmyadmin/ubuntu/config >> /usr/share/phpmyadmin/config.inc.php;
+ cat ./resources/phpmyadmin/ubuntu/apache > /etc/apache2/conf-enabled/phpmyadmin.conf;
+
+ cat ./resources/phpmyadmin/ubuntu/config >> /usr/share/phpmyadmin/config.inc.php;
+ cat ./resources/phpmyadmin/ubuntu/apache > /etc/apache2/conf-enabled/phpmyadmin.conf;
+!

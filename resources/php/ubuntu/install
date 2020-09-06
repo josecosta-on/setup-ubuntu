@@ -1,0 +1,14 @@
+#!/bin/bash
+
+CHECK=$(php --version | awk '{print substr($0,1,5);exit}')
+
+CHECK=$(echo $CHECK | tr "[:upper:]" "[:lower:]")
+echo $CHECK
+
+
+
+if [ "$CHECK" != "php" ]; then
+    I="$INSTALLER php"
+    $(echo $I)
+    ./lib/reader $0 default.txt "./setup"
+fi

@@ -1,0 +1,7 @@
+{
+    "require": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "fxp/composer-asset-plugin": "^1.4",
+        "squizlabs/php_codesniffer": "^3.5"
+    }
+}

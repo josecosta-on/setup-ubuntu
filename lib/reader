@@ -1,0 +1,18 @@
+#!/bin/bash
+
+SCRIPT=`realpath $1`
+SCRIPTPATH=`dirname $SCRIPT`
+
+declare -A ARR
+ARR=()
+
+echo read file $2
+input="$SCRIPTPATH/$2"
+while IFS= read -r line
+do  
+    echo $line
+    ARR[${#ARR[@]}]=$line
+done < "$input"
+
+echo ${ARR[@]}
+for i in "${ARR[@]}"; do $3 $i; done

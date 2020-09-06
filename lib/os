@@ -1,0 +1,35 @@
+#!/bin/bash
+# Determine OS platform
+
+UNAME=$(uname | tr "[:upper:]" "[:lower:]")
+VERSION_ID=""
+DISTRO=""
+# installers
+BASE_INSTALLER="sudo apt -y install" 
+BASE_UNI_INSTALLER="sudo snap install" 
+
+# If Linux, try to determine specific distribution
+if [ "$UNAME" == "linux" ]; then
+    # If available, use LSB to identify distribution
+    if [ -f /etc/lsb-release -o -d /etc/lsb-release.d ]; then
+        VERSION_ID=$(lsb_release -r | cut -d: -f2 | sed s/'^\t'//)
+        DISTRO=$(lsb_release -i | cut -d: -f2 | sed s/'^\t'//)
+    # Otherwise, use release info file
+    else       
+        VERSION_ID=$(awk -F= '/^VERSION_ID/{print $2}' /etc/os-release)
+        DISTRO=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
+    fi
+
+fi
+# For everything else (or if above failed), just use generic identifier
+[ "$DISTRO" == "" ] && DISTRO=$UNAME
+
+export DISTRO=$(echo $DISTRO | tr "[:upper:]" "[:lower:]")
+export VERSION_ID=$(echo $VERSION_ID | tr "[:upper:]" "[:lower:]")
+
+export BASE_INSTALLER
+export BASE_UNI_INSTALLER
+export INSTALLER=$BASE_INSTALLER
+export UNI_INSTALLER=$BASE_UNI_INSTALLER
+unset UNAME
+

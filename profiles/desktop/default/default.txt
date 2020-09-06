@@ -1,0 +1,6 @@
+bin
+apps
+fav
+extensions
+dev
+themes

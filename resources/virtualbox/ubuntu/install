@@ -1,0 +1,2 @@
+I="$INSTALLER"
+$(echo $I)

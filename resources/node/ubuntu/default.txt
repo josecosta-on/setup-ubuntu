@@ -1,0 +1,12 @@
+nativefier
+gulp
+cordova
+maildev
+cordova-res
+@ionic/cli
+qrcode-terminal
+internal-ip-cli
+oclif
+prettier
+public-ip-cli
+google-translate

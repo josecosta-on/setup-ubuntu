@@ -1,0 +1,7 @@
+#!/bin/bash
+SCRIPT=`realpath $0`
+SCRIPTPATH=`dirname $SCRIPT`
+
+./lib/reader $0 default.txt "./theme $SCRIPTPATH/"
+
+./lib/ubuntu/restart-shell

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+I="$BASE_UNI_INSTALLER wps-office"
+$(echo $I)

@@ -1,0 +1,16 @@
+#!/bin/bash
+./setup php
+./setup mysql
+#./setup phpmyadmin
+
+sudo usermod -a -G www-data $(whoami)
+sudo chown -R $(whoami):www-data /var/www/html
+sudo chmod 775 -R /var/www/html
+
+FILE=/var/www/html/dev
+if ! test -d "$FILE"; then
+    mkdir /var/www/html/dev
+    ln -s /var/www/html/dev ~/dev
+    echo "file:///home/$(whoami)/dev dev" >> ~/.config/gtk-3.0/bookmarks 
+fi
+sudo systemctl restart apache2
