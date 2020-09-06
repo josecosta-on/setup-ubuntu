@@ -1,2 +1,15 @@
-gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "['<Primary><Alt>y']"
-python3 ./lib/ubuntu/keyboard.py 'open tilix' 'tilix' '<Control><Alt>t'
+#!/bin/bash
+CHECK=$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings | awk '{print substr($0,1,4);exit}')
+
+CHECK=$(echo $CHECK | tr "[:upper:]" "[:lower:]")
+echo $CHECK
+
+if [ "$CHECK" == "@as" ]; then
+
+    gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "['<Primary><Alt>y']"
+
+    python3 ./lib/ubuntu/keyboard.py 'open tilix' 'tilix' '<Control><Alt>t'
+    python3 ./lib/ubuntu/keyboard.py 'open nautilus' 'nautilus' '<Super>e'
+    python3 ./lib/ubuntu/keyboard.py 'open sudo nautilus' 'sudo nautilus' '<Alt>e'
+
+fi

@@ -10,9 +10,12 @@ firstname = "custom"
 # get the current list of custom shortcuts
 get = lambda cmd: subprocess.check_output(["/bin/bash", "-c", cmd]).decode("utf-8")
 array_str = get("gsettings get "+key)
+
+print(array_str)
 # in case the array was empty, remove the annotation hints
 command_result = array_str.lstrip("@as")
 current = eval(command_result)
+print(current)
 # make sure the additional keybinding mention is no duplicate
 n = 1
 while True:

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CHECK=$(php --version | awk '{print substr($0,1,5);exit}')
+CHECK=$(php --version | awk '{print substr($0,1,4);exit}')
 
 CHECK=$(echo $CHECK | tr "[:upper:]" "[:lower:]")
 echo $CHECK
