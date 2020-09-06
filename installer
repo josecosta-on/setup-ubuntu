@@ -20,9 +20,6 @@ rm -rf setup-ubuntu;
 git clone https://github.com/josecosta-on/setup-ubuntu --depth 1;
 cd ./setup-ubuntu;
 ./install;
-rm ../i;
-
-
 
 EOT
 
