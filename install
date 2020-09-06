@@ -4,8 +4,6 @@ SCRIPTPATH=`dirname $SCRIPT`
 
 source ~/setup-ubuntu/lib/os
 
-echo $0 $1 $2
-exit
 PROFILE="$1"
 if [ "$PROFILE" == "" ]; then
 PROFILE="desktop/default"
