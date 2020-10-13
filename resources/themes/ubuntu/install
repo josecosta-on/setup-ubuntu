@@ -2,6 +2,10 @@
 SCRIPT=`realpath $0`
 SCRIPTPATH=`dirname $SCRIPT`
 
+
+I="$BASE_INSTALLER sassc optipng gtk2-engines-murrine gtk2-engines-pixbuf"
+$(echo $I)
+
 ./lib/reader $0 default.txt "./theme $SCRIPTPATH/"
 
 ./lib/ubuntu/restart-shell

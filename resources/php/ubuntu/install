@@ -11,4 +11,7 @@ if [ "$CHECK" != "php" ]; then
     I="$INSTALLER php"
     $(echo $I)
     ./lib/reader $0 default.txt "./setup"
+    a2enmod proxy_fcgi setenvif
+    a2enconf php7.4-fpm
+
 fi

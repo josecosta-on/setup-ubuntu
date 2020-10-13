@@ -1,7 +1,8 @@
 #!/bin/bash
+./setup phpmyadmin
 ./setup php
 ./setup mysql
-./setup phpmyadmin
+./setup node
 
 sudo usermod -a -G www-data $(whoami)
 sudo chown -R $(whoami):www-data /var/www/html

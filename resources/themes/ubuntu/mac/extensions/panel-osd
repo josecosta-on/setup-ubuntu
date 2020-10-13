@@ -1,0 +1,7 @@
+org.gnome.shell.extensions.panel-osd y-pos 100.0
+org.gnome.shell.extensions.panel-osd y-res false
+org.gnome.shell.extensions.panel-osd force-expand false
+org.gnome.shell.extensions.panel-osd test-delay 1.0
+org.gnome.shell.extensions.panel-osd test-notification false
+org.gnome.shell.extensions.panel-osd x-pos 50.0
+org.gnome.shell.extensions.panel-osd x-res false

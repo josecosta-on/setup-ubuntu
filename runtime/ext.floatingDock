@@ -1,0 +1,9 @@
+org.gnome.shell.extensions.floatingDock floating-dock-app-list 'firefox.desktop'
+org.gnome.shell.extensions.floatingDock floating-dock-direction 'up'
+org.gnome.shell.extensions.floatingDock floating-dock-keep-open false
+org.gnome.shell.extensions.floatingDock floating-dock-indicator 'dash'
+org.gnome.shell.extensions.floatingDock floating-dock-hotkey ['<Control><Alt>k']
+org.gnome.shell.extensions.floatingDock floating-dock-icon-favorites true
+org.gnome.shell.extensions.floatingDock floating-dock-icon-file '/path/to/icon/file'
+org.gnome.shell.extensions.floatingDock floating-dock-icon-size 48
+org.gnome.shell.extensions.floatingDock floating-dock-position [74, 1077]

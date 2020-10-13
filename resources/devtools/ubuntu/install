@@ -1,0 +1,35 @@
+#!/bin/bash
+
+
+# wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip
+
+# sudo mkdir ~/DevTools
+# sudo mkdir ~/DevTools/Android
+# sudo mkdir ~/DevTools/Android/cmdline-tools
+
+# unzip commandlinetools-linux-6609375_latest.zip
+
+# sudo mv tools ~/DevTools/Android/cmdline-tools/
+# sudo chmod 755 -R ~/DevTools/Android/cmdline-tools/
+# ls -l ~/DevTools/Android/cmdline-tools/tools
+# sudo chown jcosta:jcosta -R ~/DevTools/Android
+
+echo '
+# ANDROID SDK
+DEV_TOOLS="/home/$USER/DevTools"
+JAVA_HOME="$DEV_TOOLS/JDK/"
+ANDROID_HOME="$DEV_TOOLS/Android"
+export JAVA_HOME
+export ANDROID_HOME
+PATH="$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools:$PATH"' >> ~/.bashrc
+
+sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64 $DEV_TOOLS/JDK
+source ~/.bashrc
+
+
+sdkmanager --version
+yes | sdkmanager --licenses
+yes | sdkmanager "platform-tools" "platforms;android-29"
+yes | sdkmanager "build-tools" "build-tools;29.0.3"
+
+source ~/.bashrc

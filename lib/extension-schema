@@ -1,0 +1,13 @@
+#!/bin/bash
+FULLNAME=$1
+NAME=$2
+
+FILE=~/.local/share/gnome-shell/extensions/$FULLNAME/schemas/org.gnome.shell.extensions.$NAME.gschema.xml
+if test -f "$FILE"; then
+
+    sudo cp ~/.local/share/gnome-shell/extensions/$FULLNAME/schemas/org.gnome.shell.extensions.$NAME.gschema.xml \
+    /usr/share/glib-2.0/schemas/ &&
+    sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+    echo "Register schema $NAME"
+fi
+    

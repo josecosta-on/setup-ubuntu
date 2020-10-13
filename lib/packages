@@ -15,6 +15,10 @@ node=RESOURCES
 php=RESOURCES
 phpmyadmin=RESOURCES
 themes=RESOURCES
+chats=RESOURCES
+composer=RESOURCES
+devtools=RESOURCES
+
 
 vscode=RESOURCES
 web=RESOURCES

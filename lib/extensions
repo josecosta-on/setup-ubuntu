@@ -1,0 +1,31 @@
+#!/bin/bash
+
+gnome-extensions list > ./runtime/temp.ext
+THEME="$1"
+THEMEDIR=./resources/themes/ubuntu/$THEME
+LIST=./resources/themes/ubuntu/$THEME/list.txt
+
+rm -f $LIST
+touch $LIST
+input="./runtime/temp.ext"
+
+while IFS= read -r line
+do  
+    FULLNAME=$line
+    NAME=${line%%@*}
+    ./lib/extension-schema $FULLNAME $NAME
+    gsettings list-recursively org.gnome.shell.extensions.$NAME > $THEMEDIR/extensions/$NAME
+    gnome-extensions info $FULLNAME > ./runtime/status.ext
+    VALUE=$(sudo cat ./runtime/status.ext | awk -F: '/Estado/{print $2}')
+    VALUE=$(echo $VALUE | xargs)    
+    if [ "$VALUE" == "ENABLED" ];then
+        VALUE="ENABLE"
+    else
+        VALUE="DISABLE"
+    fi
+    VALUE=$(echo $VALUE | tr "[:upper:]" "[:lower:]")    
+    echo "$NAME"=$VALUE>>$LIST
+
+done < "$input"
+
+gnome-extensions enable dash-to-dock@micxgx.gmail.com

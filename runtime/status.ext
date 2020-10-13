@@ -1,0 +1,6 @@
+workspace-indicator@gnome-shell-extensions.gcampax.github.com
+  Nome: Workspace Indicator
+  Descrição: Put an indicator on the panel signaling in which workspace you are, and give you the possibility of switching to another one.
+  Caminho: /usr/share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Estado: INITIALIZED

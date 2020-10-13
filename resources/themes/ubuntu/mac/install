@@ -1,0 +1,13 @@
+#!/bin/bash
+SCRIPT=`realpath $0`
+SCRIPTPATH=`dirname $SCRIPT`
+
+cd ./themes;
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth 1;
+
+echo $(pwd)
+
+./WhiteSur-gtk-theme/install.sh
+
+cd $SETUPUBUNTUPATH
+

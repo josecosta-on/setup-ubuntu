@@ -13,5 +13,3 @@ virtualbox
 network-manager-openvpn
 playonlinux
 inkscape
-openjdk-14-jdk
-default-jdk

@@ -1,0 +1,2 @@
+org.gnome.shell.extensions.tweaks-system-menu position -1
+org.gnome.shell.extensions.tweaks-system-menu debug false

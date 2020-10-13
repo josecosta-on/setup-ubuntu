@@ -1,4 +1,4 @@
 curl 
-php-tcpdf php-cgi php-pear php-mbstring libapache2-mod-php php-common php-phpseclib php-mysql php-cli php-mbstring 
+php-tcpdf php-cgi php-pear php-mbstring libapache2-mod-php php-common php-phpseclib php-mysql php-cli php-mbstring php-xml php-bcmath php-curl php-fpm php-json php-pdo php-mysql php-zip php-gd php-pear
 apache2
 unzip
