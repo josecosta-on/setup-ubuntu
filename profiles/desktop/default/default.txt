@@ -4,3 +4,4 @@ fav
 extensions
 dev
 themes
+wallpaper
