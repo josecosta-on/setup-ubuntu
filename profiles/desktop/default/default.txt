@@ -3,4 +3,5 @@ apps
 fav
 extensions
 dev
+web
 themes

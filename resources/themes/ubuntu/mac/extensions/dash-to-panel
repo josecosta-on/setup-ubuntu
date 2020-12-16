@@ -44,7 +44,7 @@ org.gnome.shell.extensions.dash-to-panel window-preview-aspect-ratio-y 9
 org.gnome.shell.extensions.dash-to-panel intellihide-key-toggle-text '<Super>i'
 org.gnome.shell.extensions.dash-to-panel minimize-shift true
 org.gnome.shell.extensions.dash-to-panel app-shift-hotkey-7 ['<Shift><Super>7']
-org.gnome.shell.extensions.dash-to-panel available-monitors [0, 1]
+org.gnome.shell.extensions.dash-to-panel available-monitors [0]
 org.gnome.shell.extensions.dash-to-panel middle-click-action 'LAUNCH'
 org.gnome.shell.extensions.dash-to-panel show-apps-button-context-menu-titles @as []
 org.gnome.shell.extensions.dash-to-panel peek-mode-opacity 40
