@@ -1,18 +1,19 @@
 #!/bin/bash
 
+folder=~/DevTools
 
-# wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip
+wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip
 
-# sudo mkdir ~/DevTools
-# sudo mkdir ~/DevTools/Android
-# sudo mkdir ~/DevTools/Android/cmdline-tools
+sudo mkdir $folder
+sudo mkdir $folder/Android
+sudo mkdir $folder/Android/cmdline-tools
 
-# unzip commandlinetools-linux-6609375_latest.zip
+unzip commandlinetools-linux-6609375_latest.zip
 
-# sudo mv tools ~/DevTools/Android/cmdline-tools/
-# sudo chmod 755 -R ~/DevTools/Android/cmdline-tools/
-# ls -l ~/DevTools/Android/cmdline-tools/tools
-# sudo chown jcosta:jcosta -R ~/DevTools/Android
+sudo mv tools $folder/Android/cmdline-tools/
+sudo chmod 755 -R $folder/Android/cmdline-tools/
+ls -l $folder/Android/cmdline-tools/tools
+sudo chown $(whoami):$(whoami) -R $folder/Android
 
 echo '
 # ANDROID SDK
