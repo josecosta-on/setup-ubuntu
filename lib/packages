@@ -9,7 +9,6 @@ opera=UNIVERSAL
 
 chrome=RESOURCES
 office=RESOURCES
-tilix=RESOURCES
 
 node=RESOURCES
 php=RESOURCES
@@ -35,3 +34,4 @@ fav=RESOURCES
 extensions=RESOURCES
 dev=RESOURCES
 keyboard=RESOURCES
+finish=RESOURCES

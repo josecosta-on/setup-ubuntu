@@ -1,11 +1,23 @@
 #!/bin/bash
-SCRIPT=`realpath $0`
-SCRIPTPATH=`dirname $SCRIPT`
+# SCRIPT=`realpath $0`
+# SCRIPTPATH=`dirname $SCRIPT`
 
 
-I="$BASE_INSTALLER sassc optipng gtk2-engines-murrine gtk2-engines-pixbuf"
-$(echo $I)
+# I="$BASE_INSTALLER sassc optipng gtk2-engines-murrine gtk2-engines-pixbuf"
+# $(echo $I)
 
-./lib/reader $0 default.txt "./theme $SCRIPTPATH/"
+# ./lib/reader $0 default.txt "./theme $SCRIPTPATH/"
 
-./lib/ubuntu/restart-shell
+# ./lib/ubuntu/restart-shell
+sudo add-apt-repository -u ppa:snwh/ppa -y
+
+sudo apt install paper-icon-theme -y
+
+# set the icon theme
+gsettings set org.gnome.desktop.interface icon-theme "Paper"
+# or the cursor theme
+gsettings set org.gnome.desktop.interface cursor-theme "Paper"
+
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+gsettings set org.gnome.desktop.interface cursor-theme "DMZ-Black"
+gsettings set org.gnome.shell.extensions.user-theme name "Adwaita-dark"

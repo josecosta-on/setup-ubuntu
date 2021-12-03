@@ -7,7 +7,7 @@ if ! test -d "$FILE"; then
     . ~/.bashrc
     
     nvm --version
-    nvm i v10
+    nvm i v14
     . ~/.nvm/nvm.sh
     . ~/.profile
     . ~/.bashrc

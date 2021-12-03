@@ -1,6 +1,5 @@
 chrome
 office
-tilix
 gnome-tweak-tool
 speedtest-cli
 scrcpy

@@ -6,9 +6,8 @@ echo $CHECK
 
 if [ "$CHECK" == "@as" ]; then
 
-    gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "['<Primary><Alt>y']"
+    gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "['<Primary><Alt>t']"
 
-    python3 ./lib/ubuntu/keyboard.py 'open tilix' 'tilix' '<Control><Alt>t'
     python3 ./lib/ubuntu/keyboard.py 'open nautilus' 'nautilus' '<Super>e'
     python3 ./lib/ubuntu/keyboard.py 'open sudo nautilus' 'sudo nautilus' '<Alt>e'
 

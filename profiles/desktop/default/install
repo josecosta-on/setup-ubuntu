@@ -2,6 +2,3 @@
 ./lib/reader $0 default.txt "./setup"
 
 
-gsettings set org.gnome.desktop.interface gtk-theme "Arc-Dark"
-gsettings set org.gnome.shell.extensions.user-theme name "Arc-Dark"
-
