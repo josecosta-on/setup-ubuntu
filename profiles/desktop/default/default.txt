@@ -1,5 +1,8 @@
 finish
 themes
 extensions
-bin
 fav
+bin
+apps
+dev
+web
