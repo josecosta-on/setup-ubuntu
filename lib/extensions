@@ -28,4 +28,4 @@ do
 
 done < "$input"
 
-gnome-extensions enable dash-to-dock@micxgx.gmail.com
+# gnome-extensions enable dash-to-dock@micxgx.gmail.com

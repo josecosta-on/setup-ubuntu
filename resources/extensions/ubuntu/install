@@ -2,9 +2,9 @@ sudo apt -y install gnome-shell-extensions
 sudo apt -y install chrome-gnome-shell
 
 #gsconnect
-./lib/ubuntu/ext-manager --install --extension-id 1319
+# ./lib/ubuntu/ext-manager --install --extension-id 1319
 #panel osd
-./lib/ubuntu/ext-manager --install --extension-id 708
+# ./lib/ubuntu/ext-manager --install --extension-id 708
 
 #sound input & output device chooser - considerar substituto
 ./lib/ubuntu/ext-manager --install --extension-id 906
@@ -13,13 +13,13 @@ sudo apt -y install chrome-gnome-shell
 
 
 #tweak in system menu
-./lib/ubuntu/ext-manager --install --extension-id 1653
+# ./lib/ubuntu/ext-manager --install --extension-id 1653
 #removable drive menu
-./lib/ubuntu/ext-manager --install --extension-id 7
+# ./lib/ubuntu/ext-manager --install --extension-id 7
 #miniview
-./lib/ubuntu/ext-manager --install --extension-id 1459 --version 3.34
-./lib/ubuntu/ext-run miniview
-./lib/ubuntu/ext-apply miniview
+# ./lib/ubuntu/ext-manager --install --extension-id 1459 --version 3.34
+# ./lib/ubuntu/ext-run miniview
+# ./lib/ubuntu/ext-apply miniview
 #user themes
 ./lib/ubuntu/ext-manager --install --extension-id 19
 #dash to panel
@@ -27,6 +27,6 @@ sudo apt -y install chrome-gnome-shell
 ./lib/ubuntu/ext-run dash-to-panel
 ./lib/ubuntu/ext-apply dash-to-panel 2>/dev/null
 #dash to dock
-./lib/ubuntu/ext-manager --install --extension-id 307
-./lib/ubuntu/ext-run dash-to-dock
-./lib/ubuntu/ext-apply dash-to-dock 2>/dev/null
+# ./lib/ubuntu/ext-manager --install --extension-id 307
+# ./lib/ubuntu/ext-run dash-to-dock
+# ./lib/ubuntu/ext-apply dash-to-dock 2>/dev/null
