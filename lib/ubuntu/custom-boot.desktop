@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Configuração Inicial
+GenericName=Configuração Inicial
+Comment=Configuração do sistema
+Exec=/usr/bin/customboot
+StartupNotify=true
+Terminal=false
+Icon=browser
+Type=Application

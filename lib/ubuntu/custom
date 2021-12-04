@@ -1,0 +1,13 @@
+#!/bin/bash
+
+[ -f ~/.config/setup-ubuntu/custom ] && exit 0
+echo "start custom first time::$(whoami)";
+mkdir -p ~/.config/setup-ubuntu
+touch ~/.config/setup-ubuntu/custom
+
+    sleep 5
+    DISPLAY=:0.0 /usr/share/notify --icon=mail-unread Subject Message -a "custom-boot"
+    
+    
+
+exit 0;

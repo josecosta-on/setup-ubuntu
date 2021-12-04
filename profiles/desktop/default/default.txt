@@ -1,8 +1,5 @@
 finish
-bin
-apps
-fav
-extensions
-dev
-web
 themes
+extensions
+bin
+fav

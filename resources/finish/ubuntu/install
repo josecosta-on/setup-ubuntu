@@ -1,2 +1,16 @@
-google-chrome file:///home/$(whoami)/setup-ubuntu/resources/finish/readme.html
+#!/bin/sh
 
+sudo rm -rf ~/.config/setup-ubuntu
+sudo cp ./lib/ubuntu/custom /usr/share/custom
+sudo cp ./lib/ubuntu/notify /usr/share/notify
+sudo cp ./lib/ubuntu/customboot /usr/bin/customboot
+sudo cp ./lib/ubuntu/custom-boot.desktop /usr/share/applications/custom-boot.desktop
+
+sudo rm /etc/systemd/user/custom.service
+sudo cp ./lib/ubuntu/custom.service /etc/systemd/user/custom.service
+
+systemctl --user disable custom
+systemctl --user daemon-reload
+systemctl --user enable custom
+
+exit 0;
