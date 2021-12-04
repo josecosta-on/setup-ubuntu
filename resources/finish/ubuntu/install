@@ -12,5 +12,5 @@ sudo cp ./lib/ubuntu/custom.service /etc/systemd/user/custom.service
 systemctl --user disable custom
 systemctl --user daemon-reload
 systemctl --user enable custom
-
+./lib/ubuntu/restart-shell
 exit 0;
