@@ -12,11 +12,12 @@
 sudo add-apt-repository -u ppa:snwh/ppa -y
 
 sudo apt install paper-icon-theme -y
+wget -qO- https://git.io/papirus-icon-theme-install | sh
 
 # set the icon theme
-gsettings set org.gnome.desktop.interface icon-theme "Paper"
+gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
 # or the cursor theme
-gsettings set org.gnome.desktop.interface cursor-theme "Paper"
+gsettings set org.gnome.desktop.interface cursor-theme "EPapirus-Dark"
 
 gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 gsettings set org.gnome.desktop.interface cursor-theme "DMZ-Black"

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo snap remove snap-store
+sudo apt -y install gnome-software
