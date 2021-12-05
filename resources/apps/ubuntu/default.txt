@@ -1,6 +1,5 @@
 chrome
 office
-gnome-tweak-tool
 speedtest-cli
 scrcpy
 expect
