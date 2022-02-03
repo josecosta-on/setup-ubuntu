@@ -3,7 +3,8 @@ echo "::$EXPORTED::"
 if ! [ "$EXPORTED" == "export PATH" ]; then
     echo path not added
     echo 'export PATH=${PATH}:${HOME}/.bin' >> ~/.bashrc
-    ln -s ~/setup-ubuntu/resources/bin/files ~/.bin
+    ln -s ~/setup-ubuntu/resources/bin/ubuntu/files ~/.bin
 fi
 
+sudo cp -rf ~/setup-ubuntu/resources/bin/ubuntu/share/** /usr/bin
 source ~/.bashrc

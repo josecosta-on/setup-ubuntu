@@ -1,0 +1,89 @@
+#!/bin/bash
+
+n=0
+anydesk=0
+chrome=0
+order(){
+    className=$1
+    x=$2 
+    case "$className" in
+        "google-chrome.Google-chrome"|"Navigator.Firefox"|"Opera.Opera") 
+            ((n=chrome+1));   
+            echo "browser::$chrome";
+            if [ "$n" == "0" ];then
+                chrome=1 
+                n=1             
+            fi
+            
+            wmctrl -i -r ${x:0:10} -t $n;
+            wmctrl -i -r ${x:0:10} -b add,maximized_vert,maximized_horz;
+        ;;        
+        *crx_*)                         
+            if [ "$chrome" == "0" ];then
+                chrome=$n              
+            fi
+            ((n=n+1));  
+            ((chrome=chrome+1));          
+            echo "chrome-app::$chrome::$className";
+            LISTEXCLUDE="Rocket.Chat";
+            exclude=${LISTEXCLUDE//,/\\|};
+            check=$(wmctrl -lx | grep "$exclude");
+            echo $check 
+            if [[ "$check" =~ .*"$className".* ]]; then
+                echo "It's there."
+                wmctrl -i -r ${x:0:10} -t 0;
+            else
+                wmctrl -i -r ${x:0:10} -t $n;
+                wmctrl -i -r ${x:0:10} -b add,maximized_vert,maximized_horz;
+            fi
+          
+        ;; 
+        "code.Code"|"postman.Postman"|"DBeaver.DBeaver"|"new-workspace") 
+            ((n=n+1));
+            echo "code::$n";
+            wmctrl -i -r ${x:0:10} -t $n
+            wmctrl -i -r ${x:0:10} -b add,maximized_vert,maximized_horz;
+        ;;        
+        "anydesk.Anydesk")             
+            if [ "$anydesk" == "0" ];then
+                ((n=n+1));
+                anydesk=$n;  
+                wmctrl -i -r ${x:0:10} -b add,maximized_vert,maximized_horz;        
+            fi
+            echo "anydesk::$anydesk";
+            wmctrl -i -r ${x:0:10} -t $anydesk;
+        ;;
+        *) echo "ignore::0::$className";wmctrl -i -r ${x:0:10} -t 0;;
+    esac
+}
+
+LIST="crx_,google-chrome.Google-chrome,Navigator.Firefox,Opera.Opera,code.Code,postman.Postman,DBeaver.DBeaver,anydesk.Anydesk"
+nomatch=${LIST//,/\\|}
+echo $nomatch;
+IFS=$'\n';
+for x in $(wmctrl -lx | grep "$nomatch" --invert-match) ;do
+    className=$(echo "${x:14}" | cut -d' ' -f1);   
+    echo $className   
+    if [ $(xwininfo -id $x -all | awk '/Maximized/{print}' | wc -l) -eq 2 ];then
+        echo "Maximized::$className" 
+        order "new-workspace" $x;
+    else
+        order $className $x;
+    fi 
+    
+    sleep 0.1
+done
+IFS=',';
+
+for wx in ${LIST};do
+    IFS=$'\n';
+    for x in $(wmctrl -lx | grep "$wx") ;do
+        className=$(echo "${x:14}" | cut -d' ' -f1)       
+        order $className $x;
+        sleep 0.1
+    done
+    IFS=',';
+done
+wmctrl -s 0
+$(/usr/bin/show-overview) &
+exit;

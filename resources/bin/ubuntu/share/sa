@@ -1,0 +1,5 @@
+#!/bin/bash
+s="$@"
+echo $@
+
+search-app "Name=$s" --open

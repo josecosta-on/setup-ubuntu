@@ -1,0 +1,25 @@
+#!/bin/bash
+
+$(nmcli connection down jcosta@grupopie.com >> /dev/null 2>&1)  &
+killall anydesk
+IFS=$'\n';
+for x in $(wmctrl -lpx) ;do
+    wi=$(echo $x | cut -d' ' -f1 )
+    code=$(echo $x | cut -d' ' -f5 )
+    pid=$(echo $x | cut -d' ' -f4 )
+    echo "::$code::$pid"
+    # wmctrl -ic $wi
+    kill $pid
+done
+
+LIST="anydesk,chrome,/code/code"
+IFS=',';
+for wx in ${LIST};do
+    IFS=$'\n';
+    for x in $(ps -ax | grep "$wx") ;do
+        pid=$(echo "$x" | cut -d' ' -f1)       
+        kill -9 $pid
+    done
+    IFS=',';
+done
+novpn

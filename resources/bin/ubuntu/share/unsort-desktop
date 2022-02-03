@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+IFS=$'\n';
+for x in $(wmctrl -lx) ;do
+    wmctrl -i -r ${x:0:10} -t 0
+done   
+
+exit;

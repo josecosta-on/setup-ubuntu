@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ "$1" != "--no-vpn" ]; then
+    $(vpn; sleep 6; nmcli connection up jcosta@grupopie.com; rocket) &
+   
+fi
+
+google-chrome &
+code --new-window &
+nautilus ~/dev/ &
+sleep 2
+$(sort-desktop) &
+exit;

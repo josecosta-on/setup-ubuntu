@@ -1,0 +1,22 @@
+#!/bin/bash
+# google-chrome --user-data-dir=$HOME/.config/google-chrome \
+#               --profile-directory=Default \
+#               --app-id=gfjedjfcleonhghmambodibbgdmajkhn
+             
+# google-chrome --app=https://rocketchat.grupopie.com
+
+search=$(grep -r -i "$1"  /home/jcosta/.local/share/applications/)
+if [ -z "$search" ] 
+then
+    echo ""
+else
+
+    name="$(grep -oP 'chrome-\K.*?(?=-Default.desktop)' <<< $search)"   
+    echo $name
+    if [ "$2" == "--open" ]
+    then
+    google-chrome --user-data-dir=$HOME/.config/google-chrome \
+              --profile-directory=Default \
+              --app-id=$name
+    fi
+fi

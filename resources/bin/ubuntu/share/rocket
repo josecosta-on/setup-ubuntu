@@ -1,0 +1,13 @@
+#!/bin/bash
+# google-chrome --user-data-dir=$HOME/.config/google-chrome \
+#               --profile-directory=Default \
+#               --app-id=gfjedjfcleonhghmambodibbgdmajkhn
+             
+# google-chrome --app=https://rocketchat.grupopie.com
+
+search=$(search-app "Name=Rocket.Chat*$" --open)
+if [ -z "$search" ] 
+then
+    google-chrome --app=https://rocketchat.grupopie.com
+
+fi
