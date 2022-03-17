@@ -7,3 +7,8 @@ org.gnome.mutter.keybindings toggle-tiled-right ['<Super>KP_6']
 org.gnome.mutter.keybindings toggle-tiled-left ['<Super>KP_4']
 org.gnome.desktop.wm.keybindings move-to-workspace-right ['<Shift><Super>Right']
 org.gnome.desktop.wm.keybindings move-to-workspace-left ['<Shift><Super>Left']
+
+org.gnome.Terminal.Legacy.Keybindings prev-tab '<Control>Left'
+org.gnome.Terminal.Legacy.Keybindings move-tab-right '<Ctrl><Shift>Right'
+org.gnome.Terminal.Legacy.Keybindings move-tab-left '<Ctrl><Shift>Left'
+org.gnome.Terminal.Legacy.Keybindings next-tab '<Control>Right'

@@ -7,13 +7,14 @@ order(){
     className=$1
     x=$2 
     case "$className" in
-        "google-chrome.Google-chrome"|"Navigator.Firefox"|"Opera.Opera") 
-            ((n=chrome+1));   
-            echo "browser::$chrome";
-            if [ "$n" == "0" ];then
-                chrome=1 
-                n=1             
+        "google-chrome.Google-chrome"|"Navigator.Firefox"|"Opera.Opera"|"brave-browser.Brave-browser") 
+            if [ "$chrome" == "0" ];then
+                chrome=$n              
             fi
+            ((n=n+1));  
+            ((chrome=chrome+1));   
+           
+            echo "browser::$chrome";
             
             wmctrl -i -r ${x:0:10} -t $n;
             wmctrl -i -r ${x:0:10} -b add,maximized_vert,maximized_horz;
@@ -57,7 +58,7 @@ order(){
     esac
 }
 
-LIST="crx_,google-chrome.Google-chrome,Navigator.Firefox,Opera.Opera,code.Code,postman.Postman,DBeaver.DBeaver,anydesk.Anydesk"
+LIST="crx_,Navigator.Firefox,Opera.Opera,brave-browser.Brave-browser,google-chrome.Google-chrome,code.Code,postman.Postman,DBeaver.DBeaver,anydesk.Anydesk"
 nomatch=${LIST//,/\\|}
 echo $nomatch;
 IFS=$'\n';

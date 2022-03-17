@@ -23,3 +23,4 @@ for wx in ${LIST};do
     IFS=',';
 done
 novpn
+killall dbeaver

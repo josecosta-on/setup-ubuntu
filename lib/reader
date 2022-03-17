@@ -15,4 +15,6 @@ do
 done < "$input"
 
 echo ${ARR[@]}
+echo read file end $2
+echo "#########################################################33"
 for i in "${ARR[@]}"; do $3 $i; done

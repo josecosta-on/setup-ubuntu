@@ -1,0 +1,17 @@
+cgi 
+mbstring
+common
+mysql
+cli
+mbstring
+xml
+bcmath
+curl
+fpm
+json
+pdo
+mysql
+zip
+gd
+intl
+gmp

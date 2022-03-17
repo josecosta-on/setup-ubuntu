@@ -24,11 +24,18 @@ sudo apt -y install chrome-gnome-shell
 ./lib/ubuntu/ext-manager --install --extension-id 19
 #Gnome 4x UI Improvements
 ./lib/ubuntu/ext-manager --install --extension-id 4158
+#Maximize To Empty Workspace
+./lib/ubuntu/ext-manager --install --extension-id 3100
 
 #dash to panel
 ./lib/ubuntu/ext-manager --install --extension-id 1160
 ./lib/ubuntu/ext-run dash-to-panel
 ./lib/ubuntu/ext-apply dash-to-panel 2>/dev/null
+
+#custom hot corners
+./lib/ubuntu/ext-manager --install --extension-id 4167
+./lib/ubuntu/ext-run custom-hot-corners
+./lib/ubuntu/ext-apply custom-hot-corners 2>/dev/null
 
 gsettings set org.gnome.shell.extensions.dash-to-dock isolate-locations false
 

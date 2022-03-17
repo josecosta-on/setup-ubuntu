@@ -14,3 +14,5 @@ sudo mv ./resolv.conf.temp  /etc/resolv.conf
 
 sudo nmcli networking off
 sudo nmcli networking on
+sleep 6
+nmcli connection up jcosta@grupopie.com

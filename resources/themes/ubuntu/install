@@ -23,3 +23,4 @@ gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
 gsettings set org.gnome.desktop.interface cursor-theme "DMZ-Black"
 gsettings set org.gnome.shell.extensions.user-theme name "Adwaita-dark"
 gsettings set org.gnome.desktop.wm.preferences button-layout ':close'
+org.gnome.shell.extensions.dash-to-panel hide-overview-on-startup true

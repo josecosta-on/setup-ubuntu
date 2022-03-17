@@ -25,7 +25,6 @@ mysql=RESOURCES
 virtualbox=RESOURCES
 chrome=RESOURCES
 office=RESOURCES
-composer=RESOURCES
 dbeaver=RESOURCES
 
 bin=RESOURCES
