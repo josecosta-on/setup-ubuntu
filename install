@@ -6,16 +6,23 @@ source ~/setup-ubuntu/lib/os
 
 PROFILE="$1"
 if [ "$PROFILE" == "" ]; then
-PROFILE="desktop/default"
+PROFILE="default"
 fi
 echo " -> Setup $DISTRO:$VERSION_ID - $PROFILE";
 echo " -----------------------------------------------------------";
 
-FILE="$SCRIPTPATH/profiles/$PROFILE/install"
+FILE="$SCRIPTPATH/profiles/$PROFILE"
 if ! test -f "$FILE"; then
     echo " -- PROFILE NOT FOUND                                     --";
     echo " -----------------------------------------------------------";
-    exit;
+  
 fi
 
-./profiles/$PROFILE/install
+for x in $(ls ~/setup-ubuntu/apps) ;do
+    appName=$(echo "${x}" | cut -d' ' -f1)
+    ~/setup-ubuntu/apps/$appName
+    # order $className $x;
+    # sleep 0.1
+done
+  exit;
+# ./profiles/$PROFILE/install

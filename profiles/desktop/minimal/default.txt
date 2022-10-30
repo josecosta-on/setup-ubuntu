@@ -1,8 +1,0 @@
-finish
-store
-themes
-extensions
-fav
-bin
-apps
-web

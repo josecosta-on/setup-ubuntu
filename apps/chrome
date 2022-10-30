@@ -1,0 +1,27 @@
+#!/bin/bash
+_self="${0##*/}"
+app=$(basename $_self);
+header="install:: $app in ubuntu";
+source="/etc/apt/sources.list.d/google-chrome.list"
+my_var="ubuntu"
+
+[[ ${UBUNTU_AND_DERIVATED[$i]} = $my_var ]] && echo "1"
+exit;
+case "$DISTRO" in
+[[ ${list[$i]} = $my_var ]] && echo "1")
+    echo $header;
+    
+    if [[ ! -f $source ]]
+    then
+        echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee $source
+        wget --timeout=10 -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        sudo apt update
+    fi
+  
+    sudo apt install google-chrome-stable -y
+   
+    ;;        
+*) 
+    echo "ignore:: $app" 
+    ;;
+esac

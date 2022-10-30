@@ -24,3 +24,4 @@ for wx in ${LIST};do
 done
 novpn
 killall dbeaver
+shutdown -h now

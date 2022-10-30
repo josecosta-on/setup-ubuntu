@@ -8,6 +8,11 @@ DISTRO=""
 BASE_INSTALLER="sudo apt -y install" 
 BASE_UNI_INSTALLER="sudo snap install" 
 
+IFS=','
+LIST_UBUNTU="a,ubuntu"
+export UBUNTU_AND_DERIVATED=${LIST_UBUNTU//,/\\|}
+
+
 # If Linux, try to determine specific distribution
 if [ "$UNAME" == "linux" ]; then
     # If available, use LSB to identify distribution

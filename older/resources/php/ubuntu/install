@@ -7,8 +7,8 @@ echo $CHECK
 
 # PHPV="php7.1"
 # PHPV="php7.2"
-PHPV="php7.3"
-# PHPV="php7.4"
+#PHPV="php7.3"
+PHPV="php7.4"
 # PHPV="php8.0"
 IFS=$'\n';
 for x in $(ls -1 -d /etc/apache2/mods-enabled/php*.conf) ;do

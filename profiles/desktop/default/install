@@ -1,4 +1,0 @@
-#!/bin/bash
-./lib/reader $0 default.txt "./setup"
-
-
