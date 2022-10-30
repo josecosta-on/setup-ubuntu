@@ -1,6 +1,5 @@
 finish
 store
-themes
 extensions
 fav
 bin

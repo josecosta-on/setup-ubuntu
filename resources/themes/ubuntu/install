@@ -9,18 +9,18 @@
 # ./lib/reader $0 default.txt "./theme $SCRIPTPATH/"
 
 # ./lib/ubuntu/restart-shell
-sudo add-apt-repository -u ppa:snwh/ppa -y
+# sudo add-apt-repository -u ppa:snwh/ppa -y
 
-sudo apt install paper-icon-theme -y
-wget -qO- https://git.io/papirus-icon-theme-install | sh
+# sudo apt install paper-icon-theme -y
+# wget -qO- https://git.io/papirus-icon-theme-install | sh
 
 # set the icon theme
-gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
+# gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
 # or the cursor theme
-gsettings set org.gnome.desktop.interface cursor-theme "EPapirus-Dark"
+# gsettings set org.gnome.desktop.interface cursor-theme "EPapirus-Dark"
 
-gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
-gsettings set org.gnome.desktop.interface cursor-theme "DMZ-Black"
-gsettings set org.gnome.shell.extensions.user-theme name "Adwaita-dark"
+# gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+# gsettings set org.gnome.desktop.interface cursor-theme "DMZ-Black"
+# gsettings set org.gnome.shell.extensions.user-theme name "Adwaita-dark"
 gsettings set org.gnome.desktop.wm.preferences button-layout ':close'
-org.gnome.shell.extensions.dash-to-panel hide-overview-on-startup true
+# org.gnome.shell.extensions.dash-to-panel hide-overview-on-startup true
