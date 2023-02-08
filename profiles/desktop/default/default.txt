@@ -4,5 +4,3 @@ extensions
 fav
 bin
 apps
-dev
-web
