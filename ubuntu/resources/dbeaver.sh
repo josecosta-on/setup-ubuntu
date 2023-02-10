@@ -1,0 +1,12 @@
+#!/bin/bash
+source ./variables.sh $1 $2
+
+sudo rm -rf /etc/apt/sources.list.d/dbeaver.list
+# wget -O - https://dbeaver.io/debs/dbeaver.gpg.key | sudo apt-key add -
+# echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
+
+sudo add-apt-repository -y ppa:serge-rider/dbeaver-ce
+sudo apt -y install dbeaver-ce
+
+# source ~/setup-ubuntu/lib/os
+# sudo apt install dbeaver-ce

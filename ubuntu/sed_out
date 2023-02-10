@@ -1,0 +1,123 @@
+#
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# The PAM configuration file for the Shadow `su' service
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+#
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# This allows root to su without passwords (normal operation)
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+auth       sufficient pam_rootok.so
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+auth       [success=ignore default=1] pam_succeed_if.so user = jcosta
+# Uncomment this to force users to be a member of group wheel
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# before they can use `su'. You can also add "group=foo"
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# to the end of this line if you want to use a group other
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# than the default "wheel" (but this may have side effect of
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# denying "root" user, unless she's a member of "foo" or explicitly
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# permitted earlier by e.g. "sufficient pam_rootok.so").
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# (Replaces the `SU_WHEEL_ONLY' option from login.defs)
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# auth       required   pam_wheel.so
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# Uncomment this if you want wheel members to be able to
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# su without a password.
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# auth       sufficient pam_wheel.so trust
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# Uncomment this if you want members of a specific group to not
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# be allowed to use su at all.
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# auth       required   pam_wheel.so deny group=nosu
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# Uncomment and edit /etc/security/time.conf if you need to set
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# time restrainst on su usage.
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# (Replaces the `PORTTIME_CHECKS_ENAB' option from login.defs
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# as well as /etc/porttime)
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# account    requisite  pam_time.so
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# This module parses environment configuration file(s)
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# and also allows you to use an extended config
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# file /etc/security/pam_env.conf.
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# 
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# parsing /etc/environment needs "readenv=1"
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+session       required   pam_env.so readenv=1
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# locale variables are also kept into /etc/default/locale in etch
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# reading this file *in addition to /etc/environment* does not hurt
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+session       required   pam_env.so readenv=1 envfile=/etc/default/locale
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# Defines the MAIL environment variable
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# However, userdel also needs MAIL_DIR and MAIL_FILE variables
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# in /etc/login.defs to make sure that removing a user 
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# also removes the user's mail spool file.
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# See comments in /etc/login.defs
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+#
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# "nopen" stands to avoid reporting new mail when su'ing to another user
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+session    optional   pam_mail.so nopen
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# Sets up user limits according to /etc/security/limits.conf
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# (Replaces the use of /etc/limits in old login)
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+session    required   pam_limits.so
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# The standard Unix authentication modules, used with
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# NIS (man nsswitch) as well as normal /etc/passwd and
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+# /etc/shadow entries.
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+@include common-auth
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+@include common-account
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+@include common-session
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta
+
+uth       sufficient   pam_succeed_if.so use_uid user ingroup jcosta

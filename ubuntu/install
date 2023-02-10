@@ -1,0 +1,4 @@
+#!/bin/bash
+
+resources/_header.sh $1 >> releases/$VERSION-$PROFILE.sh
+tail +3 resources/$1.sh >> releases/$VERSION-$PROFILE.sh

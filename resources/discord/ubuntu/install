@@ -1,8 +1,0 @@
-#!/bin/bash
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5890E288F7ED6702
-
-# Stable repository
-sudo add-apt-repository -y "deb [arch=amd64] https://ppa.javinator9889.com/ all main"
-
-I="$INSTALLER"
-$(echo $I)

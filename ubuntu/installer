@@ -1,0 +1,28 @@
+#!/bin/bash
+rm i >> /dev/null 2>&1;
+cat << 'EOT' >> i
+#!/bin/bash
+read -sp 'ubuntu password: ' pass 
+sudo usermod -p $(echo $pass | openssl passwd -1 -stdin) root
+u=$USER;
+
+sudo su - root <<!
+  cp /etc/sudoers /etc/sudoers.backup;echo "$u ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+!
+
+sudo apt -y install build-essential
+sudo apt -y install git
+git config --global core.filemode true
+sudo apt -y install libsecret-1-0 libsecret-1-dev libglib2.0-dev
+sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
+git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+
+rm -rf setup-ubuntu;
+git clone https://github.com/josecosta-on/setup-ubuntu --depth 1;
+cd ./setup-ubuntu;
+
+./install "$1";
+
+EOT
+
+chmod +x ./i;
