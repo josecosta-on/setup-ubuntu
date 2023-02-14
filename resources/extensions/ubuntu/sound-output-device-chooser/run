@@ -1,5 +1,0 @@
-sudo cp ~/.local/share/gnome-shell/extensions/sound-output-device-chooser@kgshank.net/schemas/org.gnome.shell.extensions.sound-output-device-chooser.gschema.xml \
-    /usr/share/glib-2.0/schemas/ &&
-sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
-
-echo "Register schema"

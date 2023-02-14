@@ -1,0 +1,8 @@
+#!/bin/bash
+
+name="${1}"
+sudo cp \
+    ~/.local/share/gnome-shell/extensions/${name}*/schemas/org.gnome.shell.extensions.*.gschema.xml \
+    /usr/share/glib-2.0/schemas/ \
+    && sudo glib-compile-schemas /usr/share/glib-2.0/schemas/ \
+    && echo "Register schema"

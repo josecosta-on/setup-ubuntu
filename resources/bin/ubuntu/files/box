@@ -1,8 +1,0 @@
-#!/bin/bash
-export adb="${ANDROID_HOME}platform-tools/adb"
-ip=$1;
-port=5555
-if [ "$2" != "" ]; then
-port=$2
-fi
-adb devices;adb connect $ip:$port;scrcpy -s $ip:$port -b 2M -m 1200

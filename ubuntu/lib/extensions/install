@@ -1,0 +1,22 @@
+#!/bin/bash
+
+LIST="${@}"
+
+i=1;
+IFS=' ';
+for line in ${LIST};do
+    i=$(($i+1))
+    echo $line
+  
+    id=$(echo "$line" | cut -d ":" -f 1)
+    name=$(echo "$line" | cut -d ":" -f 2)
+    version=$(echo "$line" | cut -d ":" -f 3)
+    # echo ./lib/extensions/ext-manager $line
+    ./lib/extensions/ext-manager --install --extension-id $id --version $version
+    # ./lib/extensions/ext-register $name
+   
+    if [ -f ./lib/extensions/config/$name.dconf ]
+    then
+        dconf load /org/gnome/shell/extensions/$name/ < ./lib/extensions/config/$name.dconf
+    fi
+done

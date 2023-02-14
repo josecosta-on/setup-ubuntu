@@ -1,4 +1,0 @@
-curl 
-libapache2-mod-php
-apache2
-unzip

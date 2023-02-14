@@ -1,0 +1,16 @@
+org.gnome.desktop.wm.keybindings switch-to-workspace-left ['<Super>Left']
+org.gnome.desktop.wm.keybindings switch-to-workspace-right ['<Super>Right']
+org.gnome.desktop.wm.keybindings move-to-monitor-left @as []
+org.gnome.desktop.wm.keybindings move-to-monitor-right @as []
+
+org.gnome.desktop.wm.keybindings maximize ['<Super>KP_8','<Super>Up']
+org.gnome.desktop.wm.keybindings unmaximize ['<Super>KP_2','<Super>Down']
+org.gnome.mutter.keybindings toggle-tiled-right ['<Super>KP_6']
+org.gnome.mutter.keybindings toggle-tiled-left ['<Super>KP_4']
+org.gnome.desktop.wm.keybindings move-to-workspace-right ['<Shift><Super>Right']
+org.gnome.desktop.wm.keybindings move-to-workspace-left ['<Shift><Super>Left']
+
+org.gnome.Terminal.Legacy.Keybindings prev-tab '<Control>Left'
+org.gnome.Terminal.Legacy.Keybindings move-tab-right '<Ctrl><Shift>Right'
+org.gnome.Terminal.Legacy.Keybindings move-tab-left '<Ctrl><Shift>Left'
+org.gnome.Terminal.Legacy.Keybindings next-tab '<Control>Right'

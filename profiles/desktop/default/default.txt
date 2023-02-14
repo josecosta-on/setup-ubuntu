@@ -1,6 +1,0 @@
-finish
-store
-extensions
-fav
-bin
-apps

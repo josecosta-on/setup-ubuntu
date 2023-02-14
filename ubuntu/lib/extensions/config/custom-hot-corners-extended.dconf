@@ -1,0 +1,21 @@
+[misc]
+ripple-animation=false
+show-osd-monitor-indexes=false
+supported-active-extensions=@as []
+
+[monitor-0-bottom-left-0]
+action='show-applications'
+barrier-size-h=88
+
+[monitor-0-bottom-left-6]
+ctrl=true
+
+[monitor-0-top-left-0]
+action='toggle-overview'
+barrier-size-h=82
+
+[monitor-0-top-left-6]
+ctrl=true
+
+[monitor-0-top-right-6]
+ctrl=true

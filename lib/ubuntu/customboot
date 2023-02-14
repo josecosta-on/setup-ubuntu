@@ -1,4 +1,0 @@
-#!/bin/bash
-
-browse file:///home/$(whoami)/setup-ubuntu/resources/finish/readme.html
-# nautilus
