@@ -10,8 +10,8 @@ notify-send 'Tudo pronto' \
 
 if [ -d "/code" ]
 then
-    echo -e "code done\n"
+    echo -e "code setup done\n"
 else
-    mkdir -p  {"/code/html","/code/logs","/code/mysql","/code/nvm"}
-   
+    sudo cp -rf ./lib/code /code
+    sudo chmod 777 -R /code
 fi
