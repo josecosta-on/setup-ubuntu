@@ -1,3 +1,0 @@
-org.gnome.shell.extensions.window-list display-all-workspaces false
-org.gnome.shell.extensions.window-list show-on-all-monitors false
-org.gnome.shell.extensions.window-list grouping-mode 'never'

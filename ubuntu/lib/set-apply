@@ -1,11 +1,10 @@
 #!/bin/bash
-#gsettings list-recursively name # like org.gnome.desktop.wm.keybindings
+# gsettings list-recursively name 
+# name like org.gnome.desktop.wm.keybindings
 
-name="${1}"
-echo "$name"
+input="${1}"
+echo "$input"
 
-
-input="./resources/$name/settings.txt"
 i=1;
 while IFS= read -r line
 do

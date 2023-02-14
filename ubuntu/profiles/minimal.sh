@@ -1,12 +1,12 @@
 #!/bin/bash
 
-source ./install chrome
-source ./install theme
-source ./install store
-source ./install fav
-source ./install keyboard/install
-source ./install extensions/install
-source ./install bin/install
-source ./install php/install
+source ./install anydesk
+source ./install browsers
+source ./install keyboard
+source ./install extensions
+source ./install bin
+source ./install nautilus
+source ./install docker
+source ./install dev
 source ./install finish
 

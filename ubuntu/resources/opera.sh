@@ -1,8 +1,0 @@
-#!/bin/bash
-source ./variables.sh $1 $2
-
-wget -qO- https://deb.opera.com/archive.key | sudo apt-key add -
-sudo add-apt-repository -y "deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free"
-
-I="$INSTALLER"
-$(echo $I)

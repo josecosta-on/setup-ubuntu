@@ -1,2 +1,0 @@
-gsettings set org.gnome.shell app-picker-layout "[]"
-~/setup-ubuntu/lib/restart-shell

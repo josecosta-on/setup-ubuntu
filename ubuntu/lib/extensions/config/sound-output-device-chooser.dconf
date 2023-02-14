@@ -1,0 +1,13 @@
+[/]
+enable-log=false
+expand-volume-menu=false
+hide-menu-icons=true
+hide-on-single-device=true
+icon-theme='monochrome'
+new-profile-indentification=false
+ports-settings='[]'
+show-input-devices=false
+show-input-slider=false
+show-output-devices=true
+show-profiles=false
+use-monochrome=true
