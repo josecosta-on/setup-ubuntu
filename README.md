@@ -2,8 +2,6 @@
 
 run on terminal
 
-<code>sudo wget -O - bit.ly/3207vye |bash; ./i </code>
-
-<code>sudo wget -O - bit.ly/3207vye |bash; ./i "desktop/minimal"</code>
+<code>udo wget -O - https://raw.githubusercontent.com/josecosta-on/setup-ubuntu/release/22.10/ubuntu/releases/22.10-minimal.sh | bash</code>
 
 
