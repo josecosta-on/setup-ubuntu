@@ -51,7 +51,7 @@ then
   unzip -oq lib.zip
 else
   sudo apt -y install curl
-  curl --silent -o- https://raw.githubusercontent.com/josecosta-on/docker-setup/main/lib.zip > lib.zip
+  curl --silent -o- https://raw.githubusercontent.com/josecosta-on/setup-ubuntu/release/$VERSION/ubuntu/releases/lib.zip > lib.zip
   unzip -oq lib.zip
 fi
 
